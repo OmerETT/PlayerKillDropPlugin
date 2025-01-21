@@ -1,0 +1,10 @@
+# Configuration file for PlayerKillDropPlugin
+
+# Global toggle for the plugin
+enabled: true
+
+# List of worlds where the plugin is enabled
+enabledWorlds:
+  - world
+  - world_nether
+  - world_the_end
