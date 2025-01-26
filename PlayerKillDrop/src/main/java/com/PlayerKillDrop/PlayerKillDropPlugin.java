@@ -33,12 +33,12 @@ public class PlayerKillDropPlugin extends JavaPlugin implements Listener {
         // Register commands
         registerCommands();
 
-        getLogger().info("PlayerKillDropPlugin v1.1-SNAPSHOT has been enabled!");
+        getLogger().info("PlayerKillDropPlugin v1.2-RELEASE has been enabled!");
     }
 
     @Override
     public void onDisable() {
-        getLogger().info("PlayerKillDropPlugin v1.1-SNAPSHOT has been disabled!");
+        getLogger().info("PlayerKillDropPlugin v1.2-RELEASE has been disabled!");
     }
 
     @EventHandler
@@ -60,9 +60,13 @@ public class PlayerKillDropPlugin extends JavaPlugin implements Listener {
             // If killed by another player, items drop normally
             event.setKeepInventory(false); // Disable inventory retention
         } else {
-            // If not killed by a player, keep their inventory
+            // If not killed by a player, keep inventory but drop half of XP
             event.setKeepInventory(true); // Enable inventory retention
             event.getDrops().clear(); // Clear default drops to prevent duplication
+
+            // Drop half of the player's XP
+            int xpToDrop = player.getTotalExperience() / 2;
+            event.setDroppedExp(xpToDrop);
         }
     }
 
