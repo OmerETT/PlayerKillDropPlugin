@@ -1,19 +1,19 @@
 name: PlayerKillDropPlugin
-version: 1.1-SNAPSHOT
+version: 1.2-RELEASE
 main: com.PlayerKillDrop.PlayerKillDropPlugin
 api-version: 1.20
-description: A plugin that controls item drops based on the cause of death.
+description: A Minecraft plugin that manages item drops based on death cause.
 commands:
   togglekilldrop:
-    description: Toggles the PlayerKillDropPlugin on or off.
+    description: Toggle the PlayerKillDropPlugin on or off.
     permission: killdrop.toggle
   reloadkilldrop:
-    description: Reloads the PlayerKillDropPlugin configuration.
+    description: Reload the configuration for PlayerKillDropPlugin.
     permission: killdrop.reload
 permissions:
   killdrop.toggle:
-    description: Allows toggling the PlayerKillDropPlugin on or off.
+    description: Permission to toggle the plugin on or off.
     default: op
   killdrop.reload:
-    description: Allows reloading the PlayerKillDropPlugin configuration.
+    description: Permission to reload the plugin configuration.
     default: op
